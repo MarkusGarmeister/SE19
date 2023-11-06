@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("includes/head", {title: "Portfolio | Tradia"})  %>
+<body>
+    <main>
+        <h1>Portfolio</h1>
+        <% journals.forEach(journal => { %>
+            <div class="tardebox">
+                <h3><%= journal.asset %></h3>
+                <p><%= journal.price %></p>
+                <p><%= journal.buysell %></p>
+                <p><%= journal.description %></p>
+            </div>
+        <% }); %>
+     
+
+    </main>
+   
+   
+</body>
+</html>
