@@ -92,7 +92,7 @@ app.post("/register", async (req, res) => {
 app.get("/login", (req, res) => {
     res.render("login")
 })
-app.post("/login", passport.authenticate('local', {failureMessage: true, successRedirect:'/' }))
+app.post("/login", passport.authenticate('local', {failureMessage: true, successRedirect:'/portfolio' }))
 app.get("/journal", (req, res) => {
     res.render(("journal"))
 })
