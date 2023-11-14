@@ -1,21 +1,27 @@
 body {
-    background-image: url(/img/chart_background.png);
-    background-size: cover;
-    color: azure;
+    background-color: #222321;
+    padding: 0%;
+    margin: 0%;
+    
+}
+
+.landingImg{
+    background-image: url(public/img/crypto1-1260x842.jpg);
 }
 
 h1 {
     font-size: 72px;
-    background: -webkit-linear-gradient(#cd19ca, #ef9d10);
+    background: linear-gradient(88deg, #479BFF 10.27%, #FFF 96.82%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-align: center;
 }
 
 h2 {
     
-    background: linear-gradient(#cd19ca, #ef9d10);
-    background-clip: text;
-    text-fill-color: transparent;
+    background: linear-gradient(88deg, #479BFF 10.27%, #FFF 96.82%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -44,7 +50,7 @@ button {
 }
   
 button:hover {
-    color: #ef9d10;
+    color: #868B81;
     width:;
     box-shadow: 0 0 20px #cd19ca;
     background-color: #cd19ca;
@@ -60,4 +66,54 @@ button:hover {
 input#description {
     width: 500px;
     height: 300px;
+}
+
+.allJournal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.journal {
+    color: #FFF;
+    background-color: #868B81;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.navbar {
+    background-color: #0D0F0B;
+    color: #868B81;
+    margin-top: 0%;
+    font-size: 20px;
+    height: 50px;
+    
+}
+
+nav button {
+    background-color: #0D0F0B;
+    color: #868B81;
+    border-radius: 10px;
+    float: right;
+}
+
+nav a {
+    color: #868B81;
+    float: right;
+    padding: 15px 17px;
+    text-align: left;
+    text-decoration: none;
+}
+
+
+
+footer {
+    background-color: #0D0F0B;
+    height: 10px;
+    color: #585B55;
+}
+
+button#logout {
+
 }

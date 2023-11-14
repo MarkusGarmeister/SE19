@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("includes/head", {title: "Journal | Tradia"})  %>
+<body>
+   <h1>Edit</h1>
+   <form action="/portfolio/edit/<%= journal._id %>" method="POST">
+        <label for="asset">Asset:</label>
+        <input type="text" name="asset" id="asset" value="<%= journal.asset %>">
+        <br>
+        
+        <label for="price">Price</label>
+        <input type="number" step="0.01" name="price" id="price" value="<%= journal.price %>">
+        <label for="amount">Amount</label>
+        <input type="number" step="0.01" name="amount" id="amount" value="<%= journal.amount %>">
+        <select id="buysell" name="buysell" >
+            <option value="buy" name="buy">Buy</option>
+            <option value="sell" name="sell">Sell</option>
+        </select>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" value="<%= journal.date.toISOString().split('T')[0] %>">
+        <br>
+        <textarea name="description" id="description" rows="6" cols="30"><%= journal.description %></textarea>
+        <br>
+        <button type="submit">Save</button>
+    
+    </form>
+</body>
+</html>

@@ -2,16 +2,26 @@
 <html lang="en">
 <%- include("includes/head", {title: "Portfolio | Tradia"})  %>
 <body>
+    <%- include("includes/nav") %>
     <main>
         <h1>Portfolio</h1>
-        <% journals.forEach(journal => { %>
-            <div class="tardebox">
+        <div class="allJournal">
+            
+            <% journals.forEach(journal => { %>
+            <div class="journal">
                 <h3><%= journal.asset %></h3>
+                <p><%= journal.date.toISOString().split('T')[0] %></p>
                 <p><%= journal.price %></p>
+                <p><%= journal.amount %></p>
                 <p><%= journal.buysell %></p>
                 <p><%= journal.description %></p>
+                <a class="update" href="/portfolio/edit/<%= journal._id %>">update</a>
+                <form action="/portfolio/delete/<%= journal._id %>" method="post"><button type="submit" class="delete">Delete</button></form>
+
+                
             </div>
-        <% }); %>
+            <% }); %>
+        </div>
      
 
     </main>

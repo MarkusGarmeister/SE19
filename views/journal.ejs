@@ -3,21 +3,26 @@
 <%- include("includes/head", {title: "Journal | Tradia"})  %>
 <body>
    <h1>Hi User</h1>
-   <form action="/journal" method="POST">
+   <form action="/portfolio/new" method="POST">
         <label for="asset">Asset:</label>
         <input type="text" name="asset" id="asset" >
         <br>
         
         <label for="price">Price</label>
-        <input type="number" name="price" id="price">
+        <input type="number" step="0.01" name="price" id="price">
+        <label for="amount">Amount</label>
+        <input type="number" step="0.01" name="amount" id="amount">
         <select id="buysell" name="buysell">
             <option value="buy" name="buy">Buy</option>
             <option value="sell" name="sell">Sell</option>
         </select>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date">
         <br>
         <textarea name="description" id="description" rows="6" cols="30" placeholder="What was your reason?"></textarea>
         <br>
         <button type="submit">Create</button>
+    
     </form>
 </body>
 </html>
