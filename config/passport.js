@@ -25,14 +25,14 @@ const verifyCallback = (email, password, done) =>{
 }
 
 passport.serializeUser(function(user, done) {
-    done(null, user);
-  });
+    done(null, user)
+  })
   
   passport.deserializeUser(function(user, done) {
-    done(null, user);
-  });
+    done(null, user)
+  })
 
-const strategy = new LocalStrategy(customFields, verifyCallback);
+const strategy = new LocalStrategy(customFields, verifyCallback)
 
 passport.use(strategy)
 

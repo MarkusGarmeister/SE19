@@ -1,0 +1,21 @@
+<script>
+    function filterAsset() {
+        const assetOption = document.getElementById("assetFilter").value
+        const journals = document.querySelectorAll('.journal')
+
+        journals.forEach(journal => {
+            const asset = journal.querySelector("#asset").textContent
+            
+            if (assetOption === 'All' || assetOption === asset) {
+                journal.style.display = "block"
+            } else {
+                journal.style.display = 'none'
+            }
+        });
+    }
+
+    
+
+    
+    document.getElementById('assetFilter').addEventListener('change', filterAsset)
+</script>

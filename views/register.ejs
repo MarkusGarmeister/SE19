@@ -2,8 +2,13 @@
 <html lang="en">
     <%- include("includes/head", {title: "Register | Tradia"})  %>
 <body>
-    
-    <form action="/register" method="POST">
+    <nav class="navbar">
+        <a id="title" href="/">BLOCKFOLIO</a>
+        <a href="/login">Login</a>
+    </nav>
+    <h1>Register</h1>
+    <div class="formbox">
+    <form id="register" action="/register" method="POST">
     
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
@@ -15,9 +20,9 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
         <br>
-        <button type="submit" class="button register" >Register</button>
+        <button type="submit" class="buttonregister" >Register</button>
     </form>
-    
+    </div>
     
     
 </body>

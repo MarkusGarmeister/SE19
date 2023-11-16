@@ -1,7 +1,8 @@
+
 import { Router } from 'express';
 import { Journal, journalSchema } from "../model/journal.js";
 import { isAuth } from "../middleware/authentification.js";
-
+import { assetQuantity } from '../helper/quantity.js';
 
 const router = Router()
 
@@ -10,10 +11,13 @@ router.get("/", isAuth, async (req, res) => {
     const journals = await Journal.find({ user: req.user._id }).exec()
 
     res.render("portfolio", {
-        journals: journals
+        journals: journals,
+        assetQuantity: assetQuantity
     })
 })
 
+
+// Creating a new journal 
 router.get("/new", isAuth, (req, res) => {
     res.render(("journal"))
 })
@@ -37,8 +41,11 @@ router.post("/new", async (req, res) => {
         res.send('Error: the journal could not be created.')
         }
     }
+
+    
 })
 
+//Editing existing journals
 router.get("/edit/:id", async (req, res) => {
     try {
         const id = req.params.id

@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
     res.render("register")
 })
 
+//Saves user information in the User collection, password will not be saved it is encrypted, only it's hash and salt will be saved
 router.post("/", async (req, res) => {
     try {
         const saltHash = genPassword(req.body.password)
