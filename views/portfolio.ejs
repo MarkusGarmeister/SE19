@@ -6,8 +6,8 @@
     <main>
         <h1>Portfolio</h1>
         <div class="filterBox">
-            <label id="assetFilter" for="assetFilter">Filter by Assets</label>
-            <select name="assetFilter" id="assetFilter">
+            <label class="filter" for="assetFilter">Filter by Assets</label>
+            <select name="assetFilter" id="assetFilter" class="filter">
                 <option value="All">All</option>
                 <% journals.forEach( journal => { %>
                     <option value="<%= journal.asset %>"><%= journal.asset %></option>
@@ -24,7 +24,7 @@
                 <p><%= journal.buysell %></p>
                 <p><%= journal.date.toISOString().split('T')[0] %></p>
                 <p>Price: <%= journal.price %> $</p>
-                <p id="amount"Invested Amount<%= journal.amount %> $</p>
+                <p>Invested Amount: <span id="amount"><%= journal.amount %></span> $</p>
                 <p>Quantity: <%= assetQuantity(journal.amount, journal.price)%></p>
                 <p><%= journal.description %></p>
                 <div class="update"><a  href="/portfolio/edit/<%= journal._id %>">Edit</a></div>
@@ -38,8 +38,7 @@
 
     </main>
     <%- include("includes/footer")  %>
-    <%- include("includes/filterAmount") %>
-     
-   
+    <%- include("includes/filterAsset") %>
+    
 </body>
 </html>
