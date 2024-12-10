@@ -27,7 +27,7 @@
                 <p>Invested Amount: <span id="amount"><%= journal.amount %></span> $</p>
                 <p>Quantity: <%= assetQuantity(journal.amount, journal.price)%></p>
                 <p><%= journal.description %></p>
-                <div class="update"><a  href="/portfolio/edit/<%= journal._id %>">      Edit       </a></div>
+                <div class="update"><a  href="/portfolio/edit/<%= journal._id %>">Edit</a></div>
                 <form action="/portfolio/delete/<%= journal._id %>" method="post"><button type="submit" class="delete">Delete</button></form>
 
                 

@@ -43,3 +43,5 @@ password: test123
 ##Packages
 
 For the register and login process I used the passport module. I used the local strategy for the authentification and for encrypting the password I used the crypto module from node.
+For the database I used an object documented database MongoDB. I deployed the database on MongoDBAtlas
+
